@@ -224,8 +224,7 @@ if (isset($_GET['deconnexion'])){
     if (isset($_GET['annuler'])){
         $cControleurPeriodeStage->annulerPeriode($idPeriode);
     }
-    
-         //poour tester        
+            
  /*******************************************************
 *         Données envoyées au template                 *
 ******************************************************/         
