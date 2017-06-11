@@ -1,13 +1,13 @@
 {# empty Twig template #} {% extends "layout.html.twig" %} {% block body %}
-    
-    <span style="text-align: right">
+
+<span style="text-align: right">
         <form method="get" action="stagiaire.php">
             Session : {{donneesStagiaire['nom']}} {{donneesStagiaire['prenom']}}
             <button name="deconnexion" type="submit" class="btn btn-default">Déconexion</button>
         </form>
-    </span>                
-                    <br>
-<section class="row stagiaire">   
+    </span>
+<br>
+<section class="row stagiaire">
     <button class="btn btn-primary btn-lg btn-block" onclick="ajoutPeriode()">Ajouter une période</button><br>
     <div id="ajoutPeriode" class="ajoutPeriode col-lg-12" style="{{vues['ajoutPeriode']}}">
 
@@ -36,7 +36,7 @@
             <p>tuteur_modif</p>
             {% include 'formulaires/modifTuteur.twig' %}
         </div>
-        
+
         <div id="tuteur_ajout" class="tutueur_modif block col-lg-offset-1 col-lg-10" style="{{vues['tuteur_ajout']}}">
             <p>tuteur_ajout</p>
             {% include 'formulaires/ajoutTuteur.twig' %}
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    {% include 'formulaires/stagiaire_entreprise_vide.twig' %} 
+    {% include 'formulaires/stagiaire_entreprise_vide.twig' %}
 
 </section>
 
