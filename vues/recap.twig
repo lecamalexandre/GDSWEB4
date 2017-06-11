@@ -1,0 +1,70 @@
+{# empty Twig template #} 
+
+
+<section class="recap row">
+    <div class="col-md-12 t3">Stage du {{donneesPeriode['dateDebut']}} au {{donneesPeriode['dateFin']}}</div>
+
+    <section class="row">
+        <div class="col-md-5">
+            <section class="row">
+                <div class="col-lg-offset-1 col-md-8 cadre"><span class="t4">Stagiaire</span>
+                    <div class='donnees col-lg-offset-1 row col-md-11'>
+                        {{donneesStagiaire['nom']}}<br>
+                        {{donneesStagiaire['prenom']}}<br>
+                        {{donneesStagiaire['mail']}}<br>
+                        {{donneesStagiaire['tel']}}<br> 
+                    </div>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-lg-offset-1 col-md-8"><span class="t4">Tuteur</span>
+                    <div class='ligne donnees col-lg-offset-1 row col-md-11'>
+                        {{donneesTuteur['nom']}}
+                        {{donneesTuteur['prenom']}}<br>
+                    </div>
+                </div>    
+            </section>
+        </div>
+
+
+        <div class="col-md-7">
+            <section class="row">
+                <div class="col-lg-offset-1 col-md-8 cadre"><span class="t4">Entreprise</span>
+                    <div class='donnees col-lg-offset-1 row col-md-11'>
+                        {{donneesEntreprise['nom']}}<br>
+                        {{donneesEntreprise['adnum']}}
+                        {{donneesEntreprise['adrue']}}<br>
+                        {{donneesEntreprise['adcp']}}
+                        {{donneesEntreprise['adville']}}<br>
+                        {{donneesEntreprise['tel']}}<br>
+                        {{donneesEntreprise['mail']}}
+                    </div>
+                </div>
+            </section>
+            <section class="row">
+                <div class="col-md-12"><span class="t4">Poste</span>
+                    <div class='ligne donnees col-lg-offset-1 row col-md-11'>
+                        {{donneesPeriode['poste']}}<br>                
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-md-offset-1 col-md-11"><span class="t4">Activités</span> </div>
+        <div class='activite col-lg-offset-1 row col-md-10'>
+            {{donneesPeriode['activite']}}
+        </div>   
+    </section>
+        <div class="row">
+        <form method="get" action="stagiaire.php">
+            <button type="submit" class="btn btn-default col-lg-offset-1 col-md-1">Valider</button>
+        </form>
+        <form method="get" action="stagiaire.php?">
+            <button type="submit" class="btn btn-default col-lg-offset-1 col-md-1">Annuler</button>
+            <input type="hidden" name="annuler" value="">
+        </form>
+        </div>
+        
+</section>
+

@@ -1,0 +1,54 @@
+{# empty Twig template #} {% extends "layout.html.twig" %} {% block body %}
+    
+    <span style="text-align: right">
+        <form method="get" action="stagiaire.php">
+            Session : {{donneesStagiaire['nom']}} {{donneesStagiaire['prenom']}}
+            <button name="deconnexion" type="submit" class="btn btn-default">Déconexion</button>
+        </form>
+    </span>                
+                    <br>
+<section class="row stagiaire">   
+    <button class="btn btn-primary btn-lg btn-block" onclick="ajoutPeriode()">Ajouter une période</button><br>
+    <div id="ajoutPeriode" class="ajoutPeriode col-lg-12" style="{{vues['ajoutPeriode']}}">
+
+        <div id="periode" class="periode block col-lg-offset-1 col-lg-10" style="{{vues['periode']}}">
+            {% include 'formulaires/stagiaire_periode_date.twig' %}
+        </div>
+
+        <div id="entreprise" class="entreprise block col-lg-offset-1 col-lg-10" style="{{vues['entreprise']}}">
+            <p>entreprise</p>
+            {% include 'tableau.twig' %}
+            <button class="btn btn-primary col-lg-offset-6 col-lg-4" onclick="formVide()">L'entreprise n'est pas dans la liste</button>
+        </div>
+
+        <div id="formEntrepriseComplete" class="formEntrepriseComplete block col-lg-offset-1 col-lg-10" style="{{vues['formEntrepriseComplete']}}">
+            <p>formEntrepriseComplete</p>
+            {% include 'formulaires/stagiaire_entreprise_complete.twig' %}
+        </div>
+
+        <div id="tuteur_liste" class="tuteur_liste block col-lg-offset-1 col-lg-10" style="{{vues['tuteur_liste']}}">
+            <p>tuteur_liste</p>
+            {% include 'tableau.twig' %}
+            <button class="btn btn-primary col-lg-offset-6 col-lg-4" onclick="ajoutTuteur()">Le tuteur n'est pas dans la liste</button>
+        </div>
+
+        <div id="tuteur_modif" class="tutueur_modif block col-lg-offset-1 col-lg-10" style="{{vues['tuteur_modif']}}">
+            <p>tuteur_modif</p>
+            {% include 'formulaires/modifTuteur.twig' %}
+        </div>
+        
+        <div id="tuteur_ajout" class="tutueur_modif block col-lg-offset-1 col-lg-10" style="{{vues['tuteur_ajout']}}">
+            <p>tuteur_ajout</p>
+            {% include 'formulaires/ajoutTuteur.twig' %}
+        </div>
+
+        <div id="recap" class="recap block col-lg-offset-1 col-lg-10" style="{{vues['recap']}}">
+            {% include 'recap.twig' %}
+        </div>
+    </div>
+
+    {% include 'formulaires/stagiaire_entreprise_vide.twig' %} 
+
+</section>
+
+{% endblock %}

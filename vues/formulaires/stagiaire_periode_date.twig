@@ -1,0 +1,28 @@
+{# empty Twig template #}
+
+
+        <form method="Post" action="stagiaire.php?vue=ajout">
+            
+            <div class="row">
+                <div class="form-group col-md-offset-4 col-md-4">
+                    <label class="col-md-12 col-form-label">Date début de stage</label>
+                    <input type="date" class="form-control" name="dateDebut" id="dateDebut">
+                </div>
+                <div class="form-group col-md-offset-4 col-md-4">
+                    <label for="dateFin" class="col-md-12 col-form-label">Date fin de stage</label>
+                    <input type="date" class="form-control" name="dateFin" id="dateFin">
+                </div>
+            </div>
+            <div class="row">
+            <div class="form-group">
+                <label for="dateFin" class="col-md-2 col-form-label">poste :</label>
+                <input type="text" class="form-control" name="poste" id="poste">
+            </div>
+            <div class="form-group">
+                <label for="activite" class="col-md-2 col-form-label">activitées:</label>
+                <textarea class="form-control" rows="5" id="activite" name="activite"></textarea>
+            </div>
+            </div>
+
+            <button name="date" type="submit" class="btn btn-default">envoyer</button>
+        </form>

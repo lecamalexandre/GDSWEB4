@@ -1,0 +1,45 @@
+<div id='form_entreprise_complete' class="form_entreprise_complete">
+    <h1>Information de l'entreprise</h1>
+
+    <form action="stagiaire.php?vue=ajout" method="post" id="form_entreprise">
+        <div class="form-group">
+            <label class="col-md-2 col-form-label">Raison Sociale</label>
+            <input class="form-control"  type="text" name="nom" value="{{donneesEntreprise['nom']}}">
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-form-label">Numéro</label>
+            <input class="form-control"  type="text" name="adnum" value="{{donneesEntreprise['adnum']}}">
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-form-label">Rue</label>
+            <input class="form-control"  type="text" name="adrue" value="{{donneesEntreprise['adrue']}}">
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-form-label">Code Postal</label>
+            <input class="form-control"  type="text" name="adcp" value="{{donneesEntreprise['adcp']}}">
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-form-label">Ville</label>
+            <input class="form-control"  type="text" name="adville" value="{{donneesEntreprise['adville']}}">
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-form-label">Tel</label>
+            <input class="form-control"  type="text" name="tel" value="{{donneesEntreprise['tel']}}">
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-form-label">Mail</label>
+            <input class="form-control"  type="text" name="mail" value="{{donneesEntreprise['mail']}}">
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-form-label">Siret</label>
+            <input class="form-control"  type="text" name="siret" value="{{donneesEntreprise['siret']}}">
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 col-form-label">APE</label>
+            <input class="form-control"  type="text" name="ape" value="{{donneesEntreprise['ape']}}">
+        </div>
+        <button name="form_entreprise_modifier" type="submit" class="btn btn-default">Modifier</button>
+        <button name="valider" type="submit" class="btn btn-default">Valider</button>
+        
+    </form>
+</div>
