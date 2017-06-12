@@ -131,13 +131,18 @@ if (isset($_GET['deconnexion'])){
                 $cVues->setVFormEntrepriseComplete("display : block");
               }
 
-        /*Formulaires entreprise*/
-         
-            //*Choisis dans la liste et validé tel quel*/
-                if (isset($_POST['valider'])) {   
+        /*Formulaires entreprise choisie dans la liste*/
+              
+              /*Si les données sont modifiées*/
+                if (isset($_POST['form_entreprise_modifier'])) { 
+                    $cControleurEntreprise->modifierEntreprise($_POST, $donneesPeriode['idEntreprise']);  
+                }
+              
+             /*On vérifie si des tuteurs sont déjà connus pour cette entreprise SI OUI liste tuteur SI NON formulaire d'ajout tuteur*/   
+                if (isset($_POST['valider']) OR isset($_POST['form_entreprise_modifier'])) {   
                   $nbTuteur=$cControleurEntreprise->compterTuteur($donneesPeriode['idEntreprise']);
-                  //Si il existe déjà des tuteurs on affiche la liste sinon formulaire d'ajout
-                  if ($nbTuteur>1){        
+                
+                  if ($nbTuteur>=1){        
                         $cVues->setVTuteur_liste("display : block");   
                   }  
                     
@@ -145,22 +150,8 @@ if (isset($_GET['deconnexion'])){
                       $cVues->setVTuteur_ajout("display : block"); 
                   }          
                 }
-          
-            /*Choisis dans la liste et modifié*/
-                if (isset($_POST['form_entreprise_modifier'])) { 
-                    $cControleurEntreprise->modifierEntreprise($_POST, $donneesPeriode['idEntreprise']);  
-                    $nbTuteur=$cControleurEntreprise->compterTuteur($donneesPeriode['idEntreprise']);
-                //Si il existe déjà des tuteurs on affiche la liste sinon formulaire d'ajout
-                    if ($nbTuteur>1){         
-                        $cVues->setVTuteur_liste("display : block");
-                    }  
-
-                    else {
-                        $cVues->setVTuteur_ajout("display : block");             
-                    }          
-                }  
-                            
-            /*ajout d'une nouvelle entreprise*/
+      
+       /*Formulaire ajout d'entreprise*/
                 if (isset($_POST['form_entreprise_creer'])) { 
                   $idEntreprise=$cControleurEntreprise->ajouterEntreprise($_POST);
                   $idPeriode=$cControleurPeriodeStage->assignerEntreprise($_COOKIE['idPeriode'], $idEntreprise);
@@ -219,7 +210,7 @@ if (isset($_GET['deconnexion'])){
     }
     
  /*******************************************************
-*            Valider/Annuler l'enregistrement          *
+*                    Annuler l'enregistrement          *
 ******************************************************/
     if (isset($_GET['annuler'])){
         $cControleurPeriodeStage->annulerPeriode($idPeriode);
